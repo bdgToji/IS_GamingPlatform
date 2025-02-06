@@ -41,14 +41,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.GameTitle)
             </td>
-            <td>
+            <td style="width: 20rem">
                 @Html.DisplayFor(modelItem => item.GameDesc)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateReleased)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GameImage)
+                <img style="height: 15rem; width: 10rem" src="@Html.DisplayFor(modelItem => item.GameImage)" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Rating)

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<GamePlatform.Domain.Domain.Book>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorFullName)
+            </th>
+@*             <th>
+                @Html.DisplayNameFor(model => model.PublisherName)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+@*             <th>
+                @Html.DisplayNameFor(model => model.PublishedDate)
+            </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+            <td>
+                 <img style="width: 20rem; height: 35rem" src="@Html.DisplayFor(modelItem => item.BookImage)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorFullName)
+            </td>
+@*             <td>
+                @Html.DisplayFor(modelItem => item.PublisherName)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+@*             <td>
+                @Html.DisplayFor(modelItem => item.PublishedDate)
+            </td> *@
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
